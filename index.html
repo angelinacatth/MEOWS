@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEOWS Kehamilan</title>
+    <style>
+        /* Gaya CSS untuk membuat halaman lebih rapi */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        input[type="number"], select {
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MEOWS Kehamilan</h1>
+    <p>Masukkan nilai-nilai untuk menghitung MEOWS Score.</p>
+    
+    <div class="form-container">
+        <label for="systolicBP">Tekanan Darah Sistolik (mmHg):</label>
+        <input type="number" id="systolicBP" placeholder="e.g. 120" required><br>
+
+        <label for="diastolicBP">Tekanan Darah Diastolik (mmHg):</label>
+        <input type="number" id="diastolicBP" placeholder="e.g. 80" required><br>
+
+        <label for="heartRate">Denyut Nadi (bpm):</label>
+        <input type="number" id="heartRate" placeholder="e.g. 80" required><br>
+
+        <label for="respiratoryRate">Frekuensi Pernapasan (rpm):</label>
+        <input type="number" id="respiratoryRate" placeholder="e.g. 20" required><br>
+
+        <label for="oxygenSaturation">Saturasi Oksigen (%):</label>
+        <input type="number" id="oxygenSaturation" placeholder="e.g. 98" required><br>
+
+        <label for="oxygenSupplement">Menggunakan Oksigen Tambahan?</label>
+        <select id="oxygenSupplement">
+            <option value="no">Tidak</option>
+            <option value="yes">Ya</option>
+        </select><br>
+
+        <label for="temperature">Suhu Tubuh (°C):</label>
+        <input type="number" id="temperature" placeholder="e.g. 36.5" required><br>
+
+        <label for="consciousness">Kejelasan Kesadaran:</label>
+        <select id="consciousness">
+            <option value="A">A (Alert)</option>
+            <option value="V">V (Responds to Verbal)</option>
+            <option value="P">P (Responds to Pain)</option>
+            <option value="U">U (Unresponsive)</option>
+        </select><br>
+
+        <label for="pain">Rasa Sakit (Excluding Labour):</label>
+        <select id="pain">
+            <option value="normal">Normal</option>
+            <option value="abnormal">Abnormal</option>
+        </select><br>
+
+        <label for="discharge">Discharge/Lochia:</label>
+        <select id="discharge">
+            <option value="normal">Normal</option>
+            <option value="abnormal">Abnormal</option>
+        </select><br>
+
+        <label for="proteinuria">Proteinuria (+/++)</label>
+        <select id="proteinuria">
+            <option value="0">Normal</option>
+            <option value="1">+</option>
+            <option value="2">++</option>
+        </select><br>
+
+        <button onclick="calculateMEOWS()">Hitung MEOWS</button>
+    </div>
+
+    <div id="result" class="result">
+        <h3>Hasil MEOWS Score:</h3>
+        <p id="meowsScore"></p>
+        <p id="scoreCategory"></p>
+    </div>
+
+    <!-- Tautkan file JavaScript eksternal -->
+    <script src="script.js"></script>
+
+</body>
+</html>
